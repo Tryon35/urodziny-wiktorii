@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prezent urodzinowy 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>🎁 Wybierz grę</h2>
+      <button id="btn1" onclick="startGame(1)">1. Puzzle</button>
+      <button id="btn2" onclick="startGame(2)" disabled>2. Serduszka</button>
+      <button id="btn3" onclick="startGame(3)" disabled>3. Quiz</button>
+      <button id="btn4" onclick="startGame(4)" disabled>4. Życzenia 🎉</button>
+      <button id="btn5" onclick="startGame(5)" disabled>5. Reakcja</button>
+      <button id="btn6" onclick="startGame(6)" disabled>6. Labirynt</button>
+      <button id="btn7" onclick="startGame(7)" disabled>7. Balony 🎈</button>
+    </aside>
+    <main class="content" id="game-area">
+      <!-- Od razu startuje gra 1 -->
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // startujemy automatycznie od gry 1
+    window.onload = () => startGame(1);
+  </script>
+</body>
+</html>

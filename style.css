@@ -1,0 +1,164 @@
+/* Ogólny wygląd */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: #ffe6f0;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Lewy panel */
+.sidebar {
+  background: #ff99cc;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.sidebar button {
+  background: #fff;
+  border: 2px solid #ff66a3;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 6px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.sidebar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.sidebar button:hover:enabled {
+  background: #ff66a3;
+  color: #fff;
+}
+
+/* Prawa strona */
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #fff0f5;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: relative; /* potrzebne do balonów */
+}
+
+/* Puzzle */
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 4px;
+  margin: 20px auto;
+}
+.piece {
+  width: 150px;
+  height: 150px;
+  background-size: 300px 300px;
+  cursor: grab;
+  border: 2px solid #ff99cc;
+}
+
+/* Serduszka */
+.heart {
+  position: absolute;
+  font-size: 32px;
+  cursor: pointer;
+  animation: float 4s linear forwards;
+}
+@keyframes float {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Quiz */
+.quiz {
+  margin: 20px 0;
+}
+.quiz-question {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.quiz button {
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 2px solid #ff66a3;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.quiz button:hover {
+  background: #ff66a3;
+  color: #fff;
+}
+
+/* Życzenia */
+.wishes {
+  font-size: 26px;
+  text-align: center;
+  margin-top: 30px;
+  color: #ff3399;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Animacja konfetti */
+@keyframes fall {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Reakcja */
+.reaction {
+  margin-top: 20px;
+}
+.reaction button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 2px solid #ff66a3;
+  cursor: pointer;
+}
+
+/* Labirynt */
+canvas {
+  margin-top: 20px;
+  background: #fff;
+  border: 2px solid #ddd;
+}
+
+/* Balony */
+.balloon {
+  position: absolute;
+  font-size: 32px;
+  bottom: 0;
+  animation: rise 6s linear forwards;
+}
+@keyframes rise {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
